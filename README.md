@@ -6,12 +6,12 @@
 
 # 📝 Description
 
-> This is my second website. This page is a tribute for Twin galaxies, the very first games records entity, founded on 1981, you can get more information if you're invested on:
+- This is my second website. This page is a tribute for Twin galaxies, the very first games records entity, founded on 1981, you can get more information if you're invested on:
 -https://www.twingalaxies.com/
 And I got my inspo from:
-> https://www.syderarcade.com/
-> https://newerawebsites.com/desktop/
-> https://dribbble.com/shots/25601616-Gamey-io-UI-design
+- https://www.syderarcade.com/
+- https://newerawebsites.com/desktop/
+- https://dribbble.com/shots/25601616-Gamey-io-UI-design
 
 ## 📂 Project Structure
 
@@ -21,7 +21,7 @@ And I got my inspo from:
 - 🛠 JS: Functionalities
 
 ## ⚙️ How to visualize my proyect?
-You you just have to open your IDE, create a directory for each project part and, voila! An entire website proyect with its respective source code
+- You you just have to open your IDE, create a directory for each project part and, voila! An entire website proyect with its respective source code
 
 ## 👥 Author
 - Ariadna Izquierdo Méndez: Webmaster
@@ -38,5 +38,5 @@ You you just have to open your IDE, create a directory for each project part and
 
 ### 🙏 Special Thanks / Acknowledgements
 
- > Special thanks to the creators of this domains that inspired me to do my own proyect and motivate me to try to improve myself in every other future project.
- 🧩 Michael Duke GitHub README Template
+ - Special thanks to the creators of this domains that inspired me to do my own proyect and motivate me to try to improve myself in every other future project.
+ - 🧩 Michael Duke GitHub README Template
