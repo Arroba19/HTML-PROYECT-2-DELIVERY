@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --red: #ff000d;
+    --cyan: #00ffff;
+    --purple: #8a2be2;
+    --dark: #0a001a;
+    
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: #000;
+    color: white;
+    overflow-x: hidden;
+}
+
+.parallax-wrapper {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.layer-mid {
+    position: absolute;
+    width: 110%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(255,0,255,0.4) 0%, transparent 70%);
+    background-size: 200% 200%;
+    transform: translateY(0);
+    animation: breathe 20s infinite;
+}
+
+.layer-front {
+    position: absolute;
+    width: 110%;
+    height: 200%;
+    background: 
+        repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(0,255,255,0.15) 30px, rgba(0,255,255,0.15) 32px),
+        repeating-linear-gradient(90deg, transparent, transparent 80px, rgba(255,0,13,0.12) 80px, rgba(255,0,13,0.12) 82px);
+    animation: slide 25s linear infinite;
+    transform: translateY(0);
+}
+
+/* I used keyframes (could be found on MDN) to animate the background lines vertically and horizontally*/
+@keyframes breathe {
+    0%,100% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+}
+@keyframes slide { from { background-position: 0 0; } to { background-position: 1000px 0; } }
+
+.main-header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+.main-nav {
+    display: flex;
+    gap: 3rem;
+}
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    text-shadow: 0 0 15px var(--cyan);
+}
+.main-nav a:hover {
+    color: var(--red);
+    animation: glitch 0.4s;
+}
+
+@keyframes glitch {
+    0% { text-shadow: 4px 0 var(--cyan), -4px 0 var(--red); }
+    100% { text-shadow: -4px 0 var(--cyan), 4px 0 var(--red); }
+}
+
+
+.intro-section, .content-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 200%;
+}
+
+.parrafo-1 {
+margin-bottom: 80px;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  transform: translateY(100px);    
+  transition: transform 0.08s linear;
+}
+
+.center-box {
+    max-width: 1000px;
+    width: 100%;
+}
+
+
+.intro-content h2 {
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+    animation: glitch-title 4s infinite;
+}
+@keyframes glitch-title {
+    0%,100% { text-shadow: 5px 5px var(--cyan), -5px -5px var(--red); }
+    50% { text-shadow: -5px 5px var(--cyan), 5px -5px var(--red); }
+}
+
+.neon-bar {
+    width: 500px;
+    max-width: 90%;
+    height: 6px;
+    background: linear-gradient(90deg, transparent, var(--red), var(--cyan), transparent);
+    margin: 3rem auto;
+    box-shadow: 0 0 30px var(--red);
+}
+
+.content-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    text-shadow: 0 0 30px var(--red);
+}
+
+.cards { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 30px; 
+    justify-content: center; 
+    margin-top: 3rem;
+}
+.card {
+    padding: 30px;
+    background: rgba(0,255,255,0.1);
+    border: 3px solid var(--cyan);
+    min-width: 280px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-top: 3rem;
+}
+.photo {
+    width: 340px;
+    height: 240px;
+    object-fit: cover;
+    border: 5px solid var(--cyan);
+    box-shadow: 0 0 40px rgba(0,255,255,0.6);
+    transition: 0.4s;
+}
+.photo:hover {
+    border-color: var(--red);
+    box-shadow: 0 0 80px var(--red);
+    transform: scale(1.05);
+    animation: glitch-img 0.6s;
+}
+
+/* Another effect from MDN (Mozilla developers ) */
+@keyframes glitch-img {
+    0%,100% { clip-path: inset(0); }
+    20% { clip-path: inset(0 0 70% 0); }
+    40% { clip-path: inset(70% 0 0 0); }
+    60% { clip-path: inset(0 70% 0 0); }
+}
+
+.submit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: 3rem auto 0;
+}
+.submit-form input, .submit-form button {
+    padding: 18px;
+    font-family: inherit;
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    border: 3px solid var(--cyan);
+    color: white;
+    font-size: 1rem;
+}
+.submit-form button {
+    background: var(--red);
+    cursor: pointer;
+}
+.submit-form button:hover {
+    background: var(--cyan);
+    box-shadow: 0 0 50px var(--cyan);
+}
+
+.main-footer {
+    padding: 80px 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.95);
+    border-top: 5px solid var(--red);
+}
+
+/* MOBILE */
+
+.main-footer {
+    background: rgba(10,0,30,0.98);
+    padding: 80px 20px 40px;
+    color: white;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+}
+
+.footer-top h3 {
+    font-size: 2.2rem;
+    background: linear-gradient(90deg, var(--red), var(--cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.footer-middle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+}
+
+.sitemap, .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sitemap h4, .social-links h4 {
+    color: var(--cyan);
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px var(--cyan);
+}
+
+.sitemap a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.sitemap a:hover {
+    color: var(--red);
+    text-shadow: 0 0 15px var(--red);
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    fill: white;
+    transition: all 0.4s;
+    filter: drop-shadow(0 0 10px currentColor);
+}
+
+.social-icon:hover { transform: scale(1.3) rotate(5deg); }
+
+.instagram:hover { fill: #E4405F; }
+.discord:hover { fill: #5865F2; }
+.github:hover { fill: #ffffff; }
+
+.footer-bottom {
+    padding-top: 30px;
+    border-top: 2px solid var(--red);
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 576px) {
+    .hamburger { display: flex; }
+    .main-nav {
+        position: fixed;
+        top: 100%; left: 0; right: 0;
+        background: #000;
+        flex-direction: column;
+        padding: 2rem;
+        gap: 2rem;
+        transform: translateY(-100%);
+        transition: 0.4s;
+        border-bottom: 5px solid var(--red);
+    }
+    .main-nav.open { transform: translateY(0); }
+    .intro-content h2 { font-size: 2.5rem; }
+    .photo { width: 100%; height: auto; }
+}
+
+
+    
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .footer-middle { gap: 60px; }
+    .social-icon { width: 48px; height: 48px; }
+}
+
+@media (min-width: 993px) {
+    .footer-middle { flex-direction: row; justify-content: space-between; max-width: 1000px; margin: 0 auto; }
+    .social-links { align-items: flex-end; }
+}

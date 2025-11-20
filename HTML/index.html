@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Twin Galaxies Awards - Since 1981</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/styles.css">
+  </head>
+  <body>
+    <div class="parallax-wrapper">
+      <div class="layer layer-mid" data-speed="0.5"></div>
+      <div class="layer layer-front" data-speed="0.9"></div>
+    </div>
+
+    <div class="crt-overlay"></div>
+
+    <!-- HEADER -->
+
+    <header class="main-header">
+      <div class="header-content">
+        <h1 class="logo">TWIN GALAXIES</h1>
+       <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        </button>
+        <nav class="main-nav">
+          <a href="#about">ABOUT</a>
+          <a href="#hall-of-fame">HALL OF FAME</a>
+          <a href="#gallery">GALLERY</a>
+          <a href="#records">RECORDS</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+    
+      <section class="intro-section">
+        <div class="intro-content">
+          <h2 class="glitch" data-text="TWIN GALAXIES">TWIN GALAXIES</h2>
+          <p>OFFICIAL ARCADE RECORDS SINCE 1981</p>
+          <div class="neon-bar"></div>
+            <img src="../img/twin-galaxies-removebg-preview.png" alt="Twin Galaxies" title="Twin Galaxies">
+        </div>
+      </section>
+
+      <!-- (el resto de secciones igual que antes) -->
+      <section id="about" class="content-section">
+        <div class="center-box">
+          <h2>HISTORY</h2>
+            <p class="parrafo-1">
+              Twin Galaxies began in 1981, when Walter Day realized that arcade games were becoming huge, but no one really knew who the top players were. So he set out to create an official scoreboard that would track the best high scores from all over the United States. Think of it as the “record book” of the arcade world.</p>
+              
+            <p class="parrafo-1">
+              Day traveled from arcade to arcade collecting scores, talking to players, and organizing competitions. Thanks to his work, Twin Galaxies quickly became the main authority for video-game records. If you wanted your score to be taken seriously, you sent it to Twin Galaxies.
+            </p>
+
+            <p class="parrafo-1">
+            The organization gained even more attention in the 2000s with documentaries like The King of Kong, which showed the intense rivalries and passion behind classic arcade gaming. Over time, Twin Galaxies modernized its systems, changed owners, and improved how scores are verified, but its mission stayed the same.
+            </p>
+
+            <p class="parrafo-1">
+              Today, Twin Galaxies is still known as one of the most important places for tracking world records in gaming, from old-school arcade classics to modern speedruns. It’s basically the place where gaming
+              history gets written — one high score at a time.
+            </p>
+        </div>
+      </section>
+
+      <section id="hall-of-fame" class="content-section dark-bg">
+        <div class="center-box">
+          <h2>HALL OF FAME</h2>
+          <div class="cards">
+            <div class="card">BILLY MITCHELL<br/>PERFECT PAC-MAN 1999</div>
+            <div class="card">STEVE WIEBE<br/>DONKEY KONG 1.2M</div>
+            <div class="card">TODD ROGERS<br/>DRAGSTER 5.51</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="content-section">
+        <div class="center-box">
+          <h2>MEMORYS</h2>
+          <div class="gallery">
+            <img
+              src="../img/Billy-Mitchell-Pac-Man.jpg"
+              alt="Pac-Man"
+              class="photo"
+            />
+            <img
+              src="../img/steve-wiebe-king-kong-record.webp"
+              alt="Donkey Kong"
+              class="photo"
+            />
+            <img
+              src="../img/games-records.jpg"
+              alt="HQ"
+              class="photo"
+            />
+            <img
+              src="../img/1º-arcade.jpg"
+              alt="Cabinet"
+              class="photo"
+            />
+            <img src="../img/twin-galaxies-international-scoreboard.webp" alt="international-scoreboard" class="photo" />
+            <img
+              src="../img/centipede.jpg"
+              alt="Centipede"
+              class="photo"
+            />
+            <img
+              src="assets/images/missile-command.jpg"
+              alt="Missile Command"
+              class="photo"
+            />
+            <img
+              src="../img/Scott-safran-asteroids-playing-for-world-record-1982.jpg"
+              alt="Asteroids"
+              class="photo"
+            />
+            <img
+              src="../img/scoreboard.jpg"
+              alt="Scoreboard"
+              class="photo"
+            />
+            <img
+              src="../img/walter-day.avif"
+              alt="Walter Day"
+              class="photo"
+            />
+            <img
+              src="assets/images/80s-arcade.jpg"
+              alt="80s arcade"
+              class="photo"
+            />
+            <img
+              src="../img/The-King-of-Kong.jpg"
+              alt="King of Kong"
+              class="photo"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="submit" class="content-section dark-bg">
+        <div class="center-box">
+          <h2>SUBMIT RECORD</h2>
+          <form id="record-form" class="submit-form">
+            <input
+              type="text"
+              id="player-name"
+              placeholder="PLAYER NAME"
+              required
+            />
+            <span class="error-message"></span>
+            <input
+              type="text"
+              id="game-title"
+              placeholder="GAME TITLE"
+              required
+            />
+            <span class="error-message"></span>
+            <input
+              type="number"
+              id="player-score"
+              placeholder="SCORE"
+              required
+            />
+            <span class="error-message"></span>
+            <input
+              type="text"
+              id="record-date"
+              placeholder="YYYY-MM-DD"
+              required
+            />
+            <span class="error-message"></span>
+            <button type="submit">SUBMIT</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER ULTRA RESPONSIVE + MAPA + REDES + COPYRIGHT -->
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="footer-top">
+          <h3>TWIN GALAXIES</h3>
+          <p>The official high score authority since 1981</p>
+        </div>
+
+        <div class="footer-middle">
+          <div class="sitemap">
+            <h4>SITE MAP</h4>
+            <a href="#about">About</a>
+            <a href="#hall-of-fame">Hall of Fame</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#records">Records</a>
+          </div>
+
+          <div class="social-links">
+            <h4>FOLLOW THE ARCADE</h4>
+           <img src="../img/instagram-logo-removebg-preview.png" alt="Instagram logo" title="Instagram" width="100"height="100">
+           <img src="../img/discord-logo-removebg-preview.png" alt="Discord logo" title="Discord" width="80"height="80">
+           <img src="../img/white-github-logo-removebg-preview.png" alt="Git Hub Logo " title="GitHub Profile" width="80"height="80">
+        <div class= "footer-bottom">
+          <p> 2025 TWIN GALAXIES  — ALL RIGHTS RESERVED —  ARIADNA IZQUIERDO</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
