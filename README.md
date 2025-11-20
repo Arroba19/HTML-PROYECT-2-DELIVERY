@@ -20,10 +20,10 @@ And I got my inspo from:
 - 🗂 CSS: Stylesheet
 - 🛠 JS: Functionalities
 
-## ⚙️ ¿How to visualize my proyect?
+## ⚙️ How to visualize my proyect?
 You you just have to open your IDE, create a directory for each project part and, voila! An entire website proyect with its respective source code
 
-## 👥 Autor
+## 👥 Author
 - Ariadna Izquierdo Méndez: Webmaster
 
 
