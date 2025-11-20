@@ -7,7 +7,8 @@
   <title>Twin Galaxies Awards - Since 1981</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../CSS/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
@@ -91,41 +92,59 @@
       <div class="center-box">
         <h2>MEMORYS</h2>
         <div class="gallery">
-          <img src="../img/Billy-Mitchell-Pac-Man.jpg" alt="Pac-Man" class="photo" />
+          <img src="../img/player-pacman-record.jpg" alt="Pac-Man" class="photo" />
           <img src="../img/steve-wiebe-king-kong-record.webp" alt="Donkey Kong" class="photo" />
           <img src="../img/games-records.jpg" alt="HQ" class="photo" />
           <img src="../img/1º-arcade.jpg" alt="Cabinet" class="photo" />
           <img src="../img/twin-galaxies-international-scoreboard.webp" alt="international-scoreboard" class="photo" />
           <img src="../img/centipede.jpg" alt="Centipede" class="photo" />
-          <img src="assets/images/missile-command.jpg" alt="Missile Command" class="photo" />
+          <img src="../img/book-records.jpg" alt="Book Records" class="photo" />
           <img src="../img/Scott-safran-asteroids-playing-for-world-record-1982.jpg" alt="Asteroids" class="photo" />
           <img src="../img/scoreboard.jpg" alt="Scoreboard" class="photo" />
           <img src="../img/walter-day.avif" alt="Walter Day" class="photo" />
-          <img src="assets/images/80s-arcade.jpg" alt="80s arcade" class="photo" />
+          <img src="../img/missile-command.jpg" alt="missile command" class="photo" />
           <img src="../img/The-King-of-Kong.jpg" alt="King of Kong" class="photo" />
         </div>
       </div>
     </section>
 
-    <section id="submit" class="content-section dark-bg">
+   <section id="submit" class="content-section dark-bg">
       <div class="center-box">
         <h2>SUBMIT RECORD</h2>
         <form id="record-form" class="submit-form">
-          <input type="text" id="player-name" placeholder="PLAYER NAME" required />
-          <span class="error-message"></span>
-          <input type="text" id="game-title" placeholder="GAME TITLE" required />
-          <span class="error-message"></span>
-          <input type="number" id="player-score" placeholder="SCORE" required />
-          <span class="error-message"></span>
-          <input type="text" id="record-date" placeholder="YYYY-MM-DD" required />
-          <span class="error-message"></span>
-          <button type="submit">SUBMIT</button>
+          <input type="text" id="player-name" placeholder="PLAYER NAME" />
+          <span class="error-message" id="error-name"></span>
+          <input type="text" id="game-title" placeholder="GAME TITLE" />
+          <span class="error-message" id="error-game"></span>
+          <input type="number" id="player-score" placeholder="SCORE" min="0" />
+          <span class="error-message" id="error-score"></span>
+          <input type="date" id="record-date" />
+          <span class="error-message" id="error-date"></span>
+          <button type="submit" id="btn-submit">SUBMIT</button>
+          <button type="button" id="btn-cancel">CANCEL</button>
         </form>
       </div>
     </section>
-  </main>
 
-  <!-- FOOTER ULTRA RESPONSIVE + MAPA + REDES + COPYRIGHT -->
+    <section id="records" class="content-section records-section">
+      <div class="center-box">
+        <h2>RECORDS LIST</h2>
+        <table class="records-table">
+          <thead>
+            <tr>
+              <th>Player Name</th>
+              <th>Game Title</th>
+              <th>Score</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="records-tbody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+  <!-- ULTRA RESPONSIVE FOOTER + MAP + SOCIAL + COPYRIGHT -->
   <footer class="main-footer">
     <div class="footer-content">
       <div class="footer-top">
@@ -144,16 +163,17 @@
 
         <div class="social-links">
           <h4>FOLLOW THE ARCADE</h4>
-          <img src="../img/instagram-logo-removebg-preview.png" alt="Instagram logo" title="Instagram" width="100"
-            height="100">
+          <img src="../img/instagram-logo-removebg-preview.png" alt="Instagram logo" title="Instagram" width="100" height="100">
           <img src="../img/discord-logo-removebg-preview.png" alt="Discord logo" title="Discord" width="80" height="80">
-          <img src="../img/white-github-logo-removebg-preview.png" alt="Git Hub Logo " title="GitHub Profile" width="80"
-            height="80">
-          <div class="footer-bottom">
-            <p> 2025 TWIN GALAXIES — ALL RIGHTS RESERVED — ARIADNA IZQUIERDO</p>
-          </div>
+          <img src="../img/white-github-logo-removebg-preview.png" alt="Git Hub Logo" title="GitHub Profile" width="80" height="80">
         </div>
+      </div>
+      <div class="footer-bottom">
+        <p>2025 TWIN GALAXIES — ALL RIGHTS RESERVED</p>
+      </div>
+    </div>
   </footer>
+  <script src="../js/script.js"></script>
 </body>
 
 </html>

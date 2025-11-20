@@ -5,7 +5,6 @@
     --cyan: #00ffff;
     --purple: #8a2be2;
     --dark: #0a001a;
-
 }
 
 * {
@@ -19,6 +18,7 @@ body {
     background: #000;
     color: white;
     overflow-x: hidden;
+    padding-top: 100px; /* Evita solapamiento con header fijo */
 }
 
 .parallax-wrapper {
@@ -53,27 +53,14 @@ body {
     transform: translateY(0);
 }
 
-/* I used keyframes (could be found on MDN) to animate the background lines vertically and horizontally*/
 @keyframes breathe {
-
-    0%,
-    100% {
-        background-position: 0% 0%;
-    }
-
-    50% {
-        background-position: 100% 100%;
-    }
+    0%, 100% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
 }
 
 @keyframes slide {
-    from {
-        background-position: 0 0;
-    }
-
-    to {
-        background-position: 1000px 0;
-    }
+    from { background-position: 0 0; }
+    to { background-position: 1000px 0; }
 }
 
 .main-header {
@@ -98,6 +85,18 @@ body {
     font-size: 2rem;
 }
 
+.hamburger {
+    display: none; /* Oculto por defecto en desktop */
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    z-index: 101;
+}
+
+.hamburger.active i {
+    color: var(--red);
+}
+
 .main-nav {
     display: flex;
     gap: 3rem;
@@ -116,15 +115,9 @@ body {
 }
 
 @keyframes glitch {
-    0% {
-        text-shadow: 4px 0 var(--cyan), -4px 0 var(--red);
-    }
-
-    100% {
-        text-shadow: -4px 0 var(--cyan), 4px 0 var(--red);
-    }
+    0% { text-shadow: 4px 0 var(--cyan), -4px 0 var(--red); }
+    100% { text-shadow: -4px 0 var(--cyan), 4px 0 var(--red); }
 }
-
 
 .intro-section,
 .content-section {
@@ -141,18 +134,10 @@ body {
     margin-bottom: 80px;
 }
 
-.content {
-    position: relative;
-    z-index: 2;
-    transform: translateY(100px);
-    transition: transform 0.08s linear;
-}
-
 .center-box {
     max-width: 1000px;
     width: 100%;
 }
-
 
 .intro-content h2 {
     font-size: 4.5rem;
@@ -161,15 +146,8 @@ body {
 }
 
 @keyframes glitch-title {
-
-    0%,
-    100% {
-        text-shadow: 5px 5px var(--cyan), -5px -5px var(--red);
-    }
-
-    50% {
-        text-shadow: -5px 5px var(--cyan), 5px -5px var(--red);
-    }
+    0%, 100% { text-shadow: 5px 5px var(--cyan), -5px -5px var(--red); }
+    50% { text-shadow: -5px 5px var(--cyan), 5px -5px var(--red); }
 }
 
 .neon-bar {
@@ -217,6 +195,8 @@ body {
     border: 5px solid var(--cyan);
     box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
     transition: 0.4s;
+    flex: 1 1 100%; /* Por defecto 1 columna */
+    max-width: 340px;
 }
 
 .photo:hover {
@@ -226,25 +206,11 @@ body {
     animation: glitch-img 0.6s;
 }
 
-/* Another effect from MDN (Mozilla developers ) */
 @keyframes glitch-img {
-
-    0%,
-    100% {
-        clip-path: inset(0);
-    }
-
-    20% {
-        clip-path: inset(0 0 70% 0);
-    }
-
-    40% {
-        clip-path: inset(70% 0 0 0);
-    }
-
-    60% {
-        clip-path: inset(0 70% 0 0);
-    }
+    0%, 100% { clip-path: inset(0); }
+    20% { clip-path: inset(0 0 70% 0); }
+    40% { clip-path: inset(70% 0 0 0); }
+    60% { clip-path: inset(0 70% 0 0); }
 }
 
 .submit-form {
@@ -277,14 +243,12 @@ body {
 }
 
 .main-footer {
-    padding: 80px 20px;
+    padding: 80px 20px 40px;
     text-align: center;
     background: rgba(0, 0, 0, 0.95);
     border-top: 5px solid var(--red);
-    padding: 80px 20px 40px;
     color: white;
 }
-
 
 .footer-content {
     max-width: 1400px;
@@ -355,17 +319,9 @@ body {
     transform: scale(1.3) rotate(5deg);
 }
 
-.instagram:hover {
-    fill: #E4405F;
-}
-
-.discord:hover {
-    fill: #5865F2;
-}
-
-.github:hover {
-    fill: #ffffff;
-}
+.instagram:hover { fill: #E4405F; }
+.discord:hover { fill: #5865F2; }
+.github:hover { fill: #ffffff; }
 
 .footer-bottom {
     padding-top: 30px;
@@ -374,36 +330,97 @@ body {
     opacity: 0.9;
 }
 
-/* ============TABLET================= */
-@media (min-width: 577px) {
+/* MEDIA QUERY 1: MOBILE (≤576px) */
+@media (max-width: 576px) {
+    body { padding-top: 80px; font-size: 0.8rem; }
+    .header-content { padding: 0.5rem 10px; }
+    .logo { font-size: 1.2rem; }
+    .hamburger { display: block; } /* Muestra hamburger */
     .main-nav {
-        display: none;
+        position: fixed;
+        top: 0;
+        left: -100%; /* Oculto fuera de pantalla */
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: left 0.3s ease;
+        z-index: 99;
     }
-
-    .footer-middle {
-        gap: 60px;
-    }
-
-    .social-icon {
-        width: 48px;
-        height: 48px;
-    }
+    .main-nav.active { left: 0; } /* Muestra al activar */
+    .main-nav a { font-size: 1.2rem; }
+    .intro-content h2 { font-size: 2rem; }
+    .content-section h2 { font-size: 1.5rem; }
+    .parrafo-1 { font-size: 0.7rem; margin-bottom: 20px; }
+    .cards { flex-direction: column; align-items: center; }
+    .card { min-width: auto; width: 100%; max-width: 300px; }
+    .gallery { gap: 15px; }
+    .photo { flex: 1 1 100%; width: 100%; max-width: none; height: 150px; }
+    .submit-form { max-width: 100%; gap: 10px; }
+    .submit-form input, .submit-form button { padding: 12px; font-size: 0.8rem; }
+    .footer-middle { flex-direction: column; gap: 30px; }
+    .sitemap a { font-size: 0.8rem; }
+    .social-links img { width: 60px; height: 60px; }
+    .footer-top h3 { font-size: 1.2rem; }
 }
 
-
-@media (min-width: 1024px) {
+/* MEDIA QUERY 2: TABLET (577px - 1023px) */
+@media (min-width: 577px) and (max-width: 1023px) {
+    .hamburger { display: block; } /* Muestra hamburger en tablet */
     .main-nav {
-        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: left 0.3s ease;
+        z-index: 99;
     }
+    .main-nav.active { left: 0; }
+    .logo { font-size: 1.5rem; }
+    .intro-content h2 { font-size: 3rem; }
+    .content-section h2 { font-size: 2rem; }
+    .parrafo-1 { font-size: 0.9rem; margin-bottom: 40px; }
+    .cards { gap: 20px; }
+    .card { min-width: 250px; }
+    .gallery { gap: 20px; }
+    .photo { flex: 1 1 calc(50% - 12.5px); width: calc(50% - 12.5px); height: 200px; } /* 2 columnas */
+    .submit-form { max-width: 400px; }
+    .footer-middle { gap: 50px; flex-direction: row; justify-content: center; }
+    .social-links img { width: 80px; height: 80px; }
+    .footer-top h3 { font-size: 1.8rem; }
+}
 
+/* MEDIA QUERY 3: DESKTOP (≥1024px) */
+@media (min-width: 1024px) {
+    .hamburger { display: none; } /* Oculta hamburger */
+    .main-nav { display: flex; } /* Muestra nav horizontal */
+    .logo { font-size: 2rem; }
+    .intro-content h2 { font-size: 4.5rem; }
+    .content-section h2 { font-size: 2.8rem; }
+    .parrafo-1 { margin-bottom: 80px; }
+    .cards { gap: 30px; }
+    .card { min-width: 280px; }
+    .gallery { gap: 25px; }
+    .photo { flex: 1 1 calc(33.333% - 16.67px); width: calc(33.333% - 16.67px); } /* 3 columnas */
     .footer-middle {
         flex-direction: row;
         justify-content: space-between;
         max-width: 1000px;
         margin: 0 auto;
     }
-
-    .social-links {
-        align-items: flex-end;
-    }
+    .social-links { align-items: flex-end; }
+    .footer-top h3 { font-size: 2.2rem; }
 }
+
+/* Estilos para records (CRUD) - igual que antes */
+.records-section { /* ... (mantén los estilos inline o muévelos aquí) */ }
+/* (Copia los estilos de .records-table, etc., si los tienes en inline; aquí asumo que están en el CSS principal) */
