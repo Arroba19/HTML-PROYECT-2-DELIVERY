@@ -154,7 +154,7 @@ body {
     width: 500px;
     max-width: 90%;
     height: 6px;
-    background: linear-gradient(90deg, transparent, var(--red), var(--cyan), transparent);
+    background: #ffffff;
     margin: 3rem auto;
     box-shadow: 0 0 30px var(--red);
 }
@@ -232,6 +232,100 @@ body {
     font-size: 1rem;
 }
 
+.records-section {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px; /* Más padding superior/inferior para separación */
+}
+
+.center-box .records-table {
+    width: 100%;
+    max-width: 900px; 
+    border-collapse: separate; 
+    border-spacing: 0;
+    margin: 40px auto 0;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem; 
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); /* Sombra neon */
+    border-radius: 8px;
+    overflow: hidden; 
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.records-table th,
+.records-table td {
+    padding: 15px 12px; 
+    text-align: left;
+    border-bottom: 1px solid #ffffff; 
+    border-right: 1px solid rgba(0, 255, 255, 0.1); 
+}
+
+.records-table th:last-child,
+.records-table td:last-child {
+    border-right: none; 
+}
+
+.records-table th {
+    background: #ffffff;
+    color: black; 
+    font-weight: bold;
+    text-shadow: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.records-table tr:hover {
+    background: rgba(0, 255, 255, 0.1);
+    transition: background 0.3s ease;
+}
+
+.records-table td {
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2); /* Sombra sutil en texto */
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 8px 12px; 
+    margin: 0 5px; 
+    font-size: 0.6rem; 
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-edit {
+    background: var(--cyan);
+    box-shadow: 0 0 10px var(--cyan);
+}
+
+.btn-edit:hover {
+    background: var(--red);
+    box-shadow: 0 0 15px var(--red);
+    transform: scale(1.05);
+}
+
+.btn-delete {
+    background: var(--red);
+    box-shadow: 0 0 10px var(--red);
+}
+
+.btn-delete:hover {
+    background: var(--cyan);
+    box-shadow: 0 0 15px var(--cyan);
+    transform: scale(1.05);
+}
+
 .submit-form button {
     background: var(--red);
     cursor: pointer;
@@ -261,7 +355,7 @@ body {
 
 .footer-top h3 {
     font-size: 2.2rem;
-    background: linear-gradient(90deg, var(--red), var(--cyan));
+    background:#ffffff;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -329,13 +423,12 @@ body {
     font-size: 0.9rem;
     opacity: 0.9;
 }
-
-/* MEDIA QUERY 1: MOBILE (≤576px) */
+/* MOBILE */
 @media (max-width: 576px) {
     body { padding-top: 80px; font-size: 0.8rem; }
     .header-content { padding: 0.5rem 10px; }
     .logo { font-size: 1.2rem; }
-    .hamburger { display: block; } /* Muestra hamburger */
+    .hamburger { display: block; } 
     .main-nav {
         position: fixed;
         top: 0;
@@ -350,7 +443,7 @@ body {
         transition: left 0.3s ease;
         z-index: 99;
     }
-    .main-nav.active { left: 0; } /* Muestra al activar */
+    .main-nav.active { left: 0; }
     .main-nav a { font-size: 1.2rem; }
     .intro-content h2 { font-size: 2rem; }
     .content-section h2 { font-size: 1.5rem; }
@@ -367,9 +460,9 @@ body {
     .footer-top h3 { font-size: 1.2rem; }
 }
 
-/* MEDIA QUERY 2: TABLET (577px - 1023px) */
+/* TABLET */
 @media (min-width: 577px) and (max-width: 1023px) {
-    .hamburger { display: block; } /* Muestra hamburger en tablet */
+    .hamburger { display: block; } 
     .main-nav {
         position: fixed;
         top: 0;
@@ -399,7 +492,7 @@ body {
     .footer-top h3 { font-size: 1.8rem; }
 }
 
-/* MEDIA QUERY 3: DESKTOP (≥1024px) */
+/* PC */
 @media (min-width: 1024px) {
     .hamburger { display: none; } /* Oculta hamburger */
     .main-nav { display: flex; } /* Muestra nav horizontal */
@@ -421,6 +514,3 @@ body {
     .footer-top h3 { font-size: 2.2rem; }
 }
 
-/* Estilos para records (CRUD) - igual que antes */
-.records-section { /* ... (mantén los estilos inline o muévelos aquí) */ }
-/* (Copia los estilos de .records-table, etc., si los tienes en inline; aquí asumo que están en el CSS principal) */
